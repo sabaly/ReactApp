@@ -1,3 +1,23 @@
+:root {
+  --moderateCyan: hsl(176, 50%, 47%);
+  --darkCyan: hsl(176, 72%, 28%);
+  --black: hsl(0, 0%, 0%);
+  --darkGray: hsl(0, 0%, 48%);
+}
+
+button {
+  transition: 0.4s;
+  width: fit-content;
+  padding: 15px;
+  padding-left: 30px;
+  padding-right: 30px;
+  border-radius: 50px;
+  border: none;
+  background: var(--moderateCyan);
+  color: hsl(0, 0%, 100%);
+  cursor: pointer;
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -5,9 +25,365 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  font-size: 16px;
+  background: #ccc;
+  font-size: 16px;
 }
+
+
+
+button:hover {
+  transition: 0.4s;
+  background:  var(--darkCyan);
+}
+
+p {
+  color: var(--darkGray);
+  line-height: 180%;
+  text-align: left;
+}
+
+
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+  font-size: 16px;
+}
+
+.header {
+  position: absolute;
+  top: 2%;
+  left: 5%;
+  width: 90%;
+  margin: auto;
+  height: 10vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: transparent;
+  color: white;
+}
+
+.header img {
+  transform: scale(0.8);
+  position: relative;
+  left: 10px;
+}
+
+.header i {
+  display: none;
+}
+
+.menu {
+  width: 20%;
+  list-style: none;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.menu a, .menu a:hover {
+  color: #fff;
+  text-decoration: none;
+}
+
+/*
+    Hero section
+*/
+.hero {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 60vh;
+  background: url("./images/image-hero-desktop.jpg") center;
+  z-index: -1;
+}
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 60vh;
+  background: hsla(0, 0%, 0%, 0.5);
+}
+
+
+
+/*
+    Mastercraft section
+*/
+main {
+  width: 50%;
+  margin: auto;
+  background: transparent;
+  position: relative;
+  top: 280px;
+  padding-bottom: 50px;
+}
+
+.mastercraft {
+  background: #fff;
+  padding: 20px;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  border-radius: 5px;
+}
+
+.mastercraft img, .mastercraft h2 {
+  position: relative;
+  top: -50px;
+}
+.mastercraft p {
+  position: relative;
+  top: -75px;
+}
+.mastercraft .mastercraft-btn {
+  width: 90%;
+  position: relative;
+  top: -25px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.book-mark-btn {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: row;
+  align-items: center;
+  background: #ccc;
+  color:hsl(0, 0%, 0%);
+  padding-left: 50px;
+  padding-right: 50px;
+}
+.book-mark-btn span{
+  position: relative;
+  left: 25%;
+  color: hsl(0, 0%, 20%);
+}
+.book-mark {
+  display: flex;
+}
+.book-mark svg {
+  position: relative;
+  left: 25%;
+  cursor: pointer;
+}
+.book-mark-btn:hover {
+  background: #ccc;
+}
+.bookmarked .book-mark-btn { background: hsla(176, 72%, 28%, 0.1);}
+.bookmarked .book-mark-btn span{ color: var(--darkCyan); }
+.bookmarked svg circle{
+  fill: var(--darkCyan);
+}
+.bookmarked svg path{
+  fill: white;
+}
+
+/*
+    discover section
+*/
+#discover {
+  background: hsl(0, 0%, 100%);
+  border-radius: 5px;
+  padding: 20px;
+  margin-top: 30px;
+}
+
+.discover {
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.backed {
+  border-right: 1px solid #ccc;
+  padding-right: 40px;
+  text-align: left;
+}
+.total-backers {
+  flex: 0.3;
+  padding-right: 60px;
+  text-align: left;
+  border-right: 1px solid #ccc;
+}
+.days-left {
+  text-align: left;
+  flex: 0.5;
+}
+.discover p {
+  position: relative;
+  top: -20px;
+}
+
+.progress-bar {
+  width: 90%;
+  height: 10px;
+  border-radius: 50px;
+  background: #ccc;
+  margin: 20px;
+}
+.progress-state {
+  width: 82%;
+  height: 10px;
+  border-radius: 50px;
+  background: var(--moderateCyan);
+}
+
+/*
+    About section
+*/
+#about {
+  background: hsl(0, 0%, 100%);
+  padding: 20px;
+  margin-top: 30px;
+  border-radius: 5px;
+}
+
+.about-section {
+  border: 1px solid #ccc;
+  padding: 20px;
+  margin-top: 10px;
+}
+.about-section-head {
+  display: flex;
+  justify-content: space-between;
+}
+.left { color: var(--moderateCyan); }
+.about-section-foot {
+  display: flex;
+  justify-content: space-between;
+}
+/*.disabled, .disabled .left { color: var(--darkGray); }*/
+.disabled button { background: var(--darkGray);}
+.disabled {
+  opacity: 0.6;
+}
+.disabled * { 
+  cursor: text;
+}
+
+
+/*
+    Modal
+    Back the project section
+*/
+.back-this-project {
+  transition: all 1s;
+  width: 50%;
+  margin: auto;
+  padding: 20px;
+  margin-top: 30px;
+  border-radius: 5px;
+  background: hsl(0, 0%, 100%);
+  position: absolute;
+  top: 25%;
+  left: 25%;
+  z-index: 999;
+}
+
+.back-this-project i {
+  float: right;
+  font-size: 20px;
+  position:relative;
+  top: -60px;
+  color: var(--darkGray);
+}
+.back-this-project i:hover { color: hsl(0, 0%, 0%); cursor: pointer; }
+.back-this-project  h2, #about h2 {
+  text-align: left;
+}
+
+.modal-section {
+  border: 1px solid #ccc;
+  padding: 20px;
+  margin-top: 10px;
+}
+.modal-section-head {
+  text-align: left;
+}
+.modal-section-head * {
+  cursor: pointer;
+}
+.modal-section-head:hover {
+  color: var(--moderateCyan);
+}
+
+.modal-section p {
+  height: 50px;
+  width: 90%;
+  position: relative;
+  left: 25px;
+  text-align: justify;
+}
+.pledge-rate { color: var(--moderateCyan); }
+.modal-left {
+  position: relative;
+  top: -100px;
+  left: 90%;
+}
+
+hr {
+  /*display: none;*/
+  position: relative;
+  left: -20px;
+  width: 106%;
+  margin-bottom: 30px;
+  margin-top: 30px;
+}
+.selected-pledge {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: var(--darkGray);
+}
+
+.pledge input {
+  border-radius: 50px;
+  border: 1px solid #ccc;
+  width: 50px;
+  padding: 15px;
+  text-align: center;
+  cursor: pointer;
+  font-weight: bold;
+}
+.pledge strong {
+  position: relative;
+  left: 12%;
+}
+.pledge input:focus, .pledge input:hover {
+  border-color: var(--moderateCyan);
+}
+
+/*
+    Final modal
+*/
+.thanks {
+  transition: all 1s;
+  background: hsl(0, 0%, 100%);
+  text-align: center;
+  padding: 20px;
+  width: 30%;
+  position: absolute;
+  left: 35%;
+  top: 50%;
+  z-index: 999;
+}
+
+
+/**/
+
+.behind-modal {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background: hsla(0, 0%, 0%, 0.5);
+  z-index: 997;
 }
