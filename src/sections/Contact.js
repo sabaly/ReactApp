@@ -4,7 +4,9 @@ import {
         Input, Textarea, 
         Square, 
         VStack, 
-        Button} from "@chakra-ui/react";
+        Button,
+        Text
+    } from "@chakra-ui/react";
 import { useState } from "react";
 import { FaFacebook, FaLinkedin, FaWhatsapp } from "react-icons/fa";
 
@@ -36,19 +38,31 @@ function Contact() {
                 </Square>
             </VStack>
             <Box flex={0.8} bg="whiteAlpha.300" shadow="dark-lg" p={10}>
-                <form> 
-                    <Input type="email" placeholder="email" m={2} name="mail"
+                <Text textStyle="h2" m={2}>Contact me</Text>
+                <form onSubmit={() => { alert(email + " ; " + subject + " ; " + message) ; }}> 
+                    <Input type="email" placeholder="email" m={2} focusBorderColor="green.900"
+                        value={email}
+                        onChange={(e) => {
+                            setEmail(e.target.value);
+                        }}
                     />
-                    <Input type="text" placeholder="subject" m={2}
+                    <Input type="text" placeholder="subject" m={2} focusBorderColor="green.900"
+                        value={subject}
+                        onChange={(e) => {
+                            setSubject(e.target.value);
+                        }}
                     />
                     <Textarea
-                        placeholder="Here is a sample placeholder"
+                        focusBorderColor="green.900"
+                        placeholder="Message"
                         size="sm"
                         m={2}
+                        value={message}
+                        onChange={(e) => {
+                            setMessage(e.target.value);
+                        }}
                     />
-                    <Button bg="green.800" colorScheme="white" m={2}
-                        type="submit"
-                    >Envoyer</Button>
+                    <Button bg="green.800" colorScheme="white" m={2}>Send</Button>
                 </form>
             </Box>
         </Flex>

@@ -21,3 +21,10 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+# No needed folders
+./images
+./noMoreUsed
+./main
+./backTheProject
+./about

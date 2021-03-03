@@ -39,6 +39,7 @@ function Header(props) {
                   color="red.400"
                   aria-label="Reserved"
                   icon={<LockIcon />}
+                  onClick={() => props.setLogin(!props.login)}
               />
             </ListItem>
           </List>

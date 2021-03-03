@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './icofont/icofont.min.css';
 import Header from './Header';
 import Footer from './Footer';
@@ -35,12 +35,13 @@ const theme = extendTheme({
 
 
 function App(props) {
-    
+    const [login, setLogin] = useState(false);
+
     return (
       <div className="App">
-        <Header theme={theme}/>
+        <Header theme={theme} login={login} setLogin={setLogin}/>
         <Hero theme={theme} />
-        <Section theme={theme} />
+        <Section theme={theme} login={login} />
         <Footer />
       </div>
     );
