@@ -3,6 +3,7 @@ import GridSection from './GridSection';
 import { VStack, Text } from '@chakra-ui/react';
 import Contact from './Contact';
 import Login from './Login';
+import RandomUsers from './RandomUsers';
 import { useState } from 'react';
 
 function Section(props) {
@@ -13,6 +14,7 @@ function Section(props) {
         >
             <Creator />
             <GridSection />
+            <RandomUsers />
             <Contact />
             { props.login && <Login />}
         </VStack>

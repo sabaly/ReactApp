@@ -2,6 +2,16 @@ import React from 'react';
 import './index.css';
 import { Flex, Link, Text, List, ListItem, IconButton } from "@chakra-ui/react";
 import { LockIcon } from '@chakra-ui/icons';
+import { createBreakpoints } from "@chakra-ui/theme-tools";
+
+const breakpoints = createBreakpoints({
+  sm: "30em",
+  md: "48em",
+  lg: "62em",
+  xl: "80em",
+  "2xl": "96em",
+});
+
 function Header(props) {
     return (
         <Flex p="5" 
@@ -22,7 +32,7 @@ function Header(props) {
             Chakra Train
           </Text>
           
-          <List display="flex" alignItems="flex-end">
+          <List display={["none", "flex"]} alignItems="flex-end">
             <ListItem ml="5">
               <Link href="#getstarted">Get started</Link>
             </ListItem>

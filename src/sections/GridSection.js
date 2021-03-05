@@ -7,6 +7,15 @@ import
     Modal, ModalOverlay, ModalContent, ModalHeader, ModalCloseButton,
     ModalBody, ModalFooter 
 } from '@chakra-ui/react';
+import { createBreakpoints } from "@chakra-ui/theme-tools";
+
+const breakpoints = createBreakpoints({
+  sm: "30em",
+  md: "48em",
+  lg: "62em",
+  xl: "80em",
+  "2xl": "96em",
+});
 
 function GridSection() {
     const { isOpen, onOpen, onClose } = useDisclosure()
@@ -14,25 +23,25 @@ function GridSection() {
     return (
         <>
             <Center
-                w="80%"
+                w={["100%", "80%"]}
                 mb={10}
                 l="10%"
-                p={10}
+                p={[5, 10]}
                 bg="blackAlpha.100"
             >
                 <Grid
-                    templateColumns="repeat(3, 1fr)"
-                    templateRows="repeat(2, 1fr)"
-                    gap={5}
+                    templateColumns={["repeat(1, 1fr)", "repeat(3, 1fr)"]}
+                    templateRows={["repeat(3, 1fr)", "repeat(2, 1fr)"]}
+                    gap={[2, 5]}
                 >
-                    <GridItem colSpan={2} bg="green.800" 
-                        rowSpan={2} p={10}
+                    <GridItem colSpan={[1, 2]} bg="green.800" 
+                        rowSpan={[1, 2]} p={10}
                         display="flex"
                         alignItems="center"
                         justifyContent="left"
                     >
                         <Center display="flex" flexDirection="column">
-                            <Text textStyle="h2" color="white">Train with me</Text>
+                            <Text textStyle="h2" color="white" textAlign={['center', 'left']}>Train with me</Text>
                             <Text color="whiteAlpha.500" textAlign="left" textAlign="center">
                                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec tempus lacus nunc, sed pharetra nulla mattis eu. Proin ac odio et purus accumsan suscipit.
                                 Lorem ipsum dolor sit amet, consectetur adipiscing elit
@@ -92,9 +101,9 @@ function GridSection() {
 
                 <ModalFooter>
                     <Button colorScheme="blue" mr={3}>
-                        Subscribe
+                        Register
                     </Button>
-                    <Button variant="ghost" onClick={onClose}>back</Button>
+                    <Button variant="ghost" onClick={onClose}>Cancel</Button>
                 </ModalFooter>
                 </ModalContent>
             </Modal>
